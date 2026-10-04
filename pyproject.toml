@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "digital-to-wave-2-thz-validity"
+version = "0.1.0"
+description = "Engineering-validity study of the THz human-wave interface equations in Mun Seok Lee's 'Digital to Wave' Part II: equation inventory, dimensional checks, standard-reference plausibility, and a seeded synthetic channel benchmark carrying the Part I signed-amplitude sine encoding; SYNTHETIC, no physical, biological or safety claim"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Jean-François Brisson" }]
+keywords = ["synthetic-data", "engineering-validity", "dimensional-analysis", "terahertz", "beer-lambert", "optical-rectification", "signal-processing", "matched-filter", "reproducibility", "digital-to-wave"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+]
+# Pinned: the committed CSV/PNG artifacts are byte-identical with exactly these versions (same pins as the testbench).
+dependencies = ["numpy==2.4.6", "matplotlib==3.11.2"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.urls]
+Repository = "https://github.com/sparkainlp-x/digital-to-wave-2-thz-validity"
+
+[tool.setuptools]
+packages = ["d2w_thz", "d2w_thz._vendor"]
+
+[tool.setuptools.package-data]
+"d2w_thz._vendor" = ["PROVENANCE.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# Vendored testbench code is kept byte-identical / verbatim and is never reformatted.
+extend-exclude = ["d2w_thz/_vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]

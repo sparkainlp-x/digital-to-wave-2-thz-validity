@@ -1,0 +1,46 @@
+name: tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip ruff
+      - run: python -m pip install ".[test]"
+      - name: Locked protocol modules and vendored code are unchanged
+        run: sha256sum -c MODULES.sha256
+      - name: Lint (vendored code excluded)
+        run: ruff check .
+      - name: Tests (committed-results checks are skipped until results are committed)
+        run: python -m pytest
+      - name: Check out the Digital to Wave Testbench at tag v0.4.1
+        uses: actions/checkout@v7
+        with:
+          repository: sparkainlp-x/digital-to-wave-testbench
+          ref: v0.4.1
+          path: _upstream_testbench
+      - name: Vendored code is verbatim from testbench v0.4.1
+        run: python tools/verify_vendor.py _upstream_testbench
+      - name: Committed CSV and PNG artifacts are reproduced byte for byte (skipped in the protocol-lock commit)
+        run: |
+          if [ ! -f artifacts/SHA256SUMS ]; then
+            echo "No committed results yet (protocol-lock commit); nothing to reproduce."
+            exit 0
+          fi
+          cp -r artifacts "$RUNNER_TEMP/committed"
+          tools/reproduce_all.sh
+          for f in "$RUNNER_TEMP"/committed/*.csv "$RUNNER_TEMP"/committed/*.png; do
+            cmp "$f" "artifacts/$(basename "$f")"
+          done
+          grep -E '\.(csv|png)$' "$RUNNER_TEMP/committed/SHA256SUMS" | (cd artifacts && sha256sum -c -)

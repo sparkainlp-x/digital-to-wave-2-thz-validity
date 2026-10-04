@@ -1,0 +1,81 @@
+{
+  "title": "Digital to Wave 2 THz Validity: an engineering-validity study of the Part II THz human-wave interface equations",
+  "upload_type": "software",
+  "version": "0.1.0",
+  "description": "<p><strong>Digital to Wave 2 THz Validity</strong> is a SYNTHETIC engineering-validity study, in Python (3.11&ndash;3.13), of the THz human-wave interface (HWI) equations in Mun Seok Lee's preprint <em>Digital to Wave: LGD In Situ Wave Memory-Human Wave Integrated Interface-Metaverse Hologram- Wave Affective AI</em> (Part II, doi:10.5281/zenodo.21947108). The preprint supplies the equations; the reference values, simulation choices, receivers, scoring and experiments are this project's own. Its author has not reviewed or endorsed this software.</p><h3>What is included</h3><ul><li>An inventory of the quantitative content of Part II (and of the Part I p. 12 encoding) by PDF page, each item classified as (a) simulatable, (b) dimensionally or physically checkable, or (c) too vague to implement.</li><li>A dimensional check of each HWI equation (pp. 29&ndash;40) and an order-of-magnitude evaluation with cited standard reference values: THz absorption and refractive index of water, membrane thickness and permittivity, an extreme ZnTe-level second-order susceptibility upper bound, ICNIRP skin exposure limits, the breakdown field of air, heating, thermal times and the SNR condition.</li><li>A seeded, protocol-locked synthetic channel benchmark: the Part I signed-amplitude sine encoding (doi:10.5281/zenodo.21947036, p. 12; encoder and decoder vendored verbatim from the Digital to Wave Testbench v0.4.1, doi:10.5281/zenodo.23134616) passes through square-law rectification, a 100 Hz membrane low-pass, Beer&ndash;Lambert depth loss in water and two-tone THz beating, with nominal, calibrated and oracle receivers, Wilson intervals, closed-form predictions and exact McNemar tests.</li><li>Generated JSON/CSV/PNG artifacts with SHA-256 checksums, a pytest suite and CI on Python 3.11&ndash;3.13 that checks the vendored code against the upstream tag and regenerates every CSV and PNG byte for byte.</li></ul><h3>Limits</h3><p>No physical, biological or safety claim is made. The channel is dimensionless, the THz carrier is not sampled, the calibrated receiver is an oracle, and the susceptibility value is an extreme upper bound. The validity numbers are order-of-magnitude checks of printed equations, not a safety assessment.</p>",
+  "creators": [
+    {
+      "name": "Brisson, Jean-François",
+      "orcid": "0009-0000-9778-5374",
+      "affiliation": "Spark AI NLP"
+    }
+  ],
+  "license": "AGPL-3.0-only",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "synthetic data",
+    "engineering validity",
+    "dimensional analysis",
+    "terahertz",
+    "Beer-Lambert law",
+    "optical rectification",
+    "exposure limits",
+    "signal processing",
+    "matched filter",
+    "Wilson interval",
+    "reproducibility",
+    "negative results",
+    "Python",
+    "Digital to Wave"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21947108",
+      "relation": "isDerivedFrom",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.21947107",
+      "relation": "isDerivedFrom",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.21947036",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.23122876",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.23134616",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/sparkainlp-x/digital-to-wave-2-thz-validity",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "references": [
+    "Lee, M. S. (2026). Digital to Wave: LGD In Situ Wave Memory-Human Wave Integrated Interface-Metaverse Hologram- Wave Affective AI [Preprint, Part II; patent pending]. Zenodo. https://doi.org/10.5281/zenodo.21947108 (all versions: https://doi.org/10.5281/zenodo.21947107). CC BY 4.0.",
+    "Lee, M. S. (2026). Digital to Wave: Paradigm Shift in Quantum Wave-Based Computing and Lab-Grown Diamond Memory [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.21947036 (all versions: https://doi.org/10.5281/zenodo.21464222). CC BY 4.0.",
+    "Brisson, J.-F. (2026). Digital to Wave Testbench (v0.4.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23134616 (all versions: https://doi.org/10.5281/zenodo.23122876). AGPL-3.0-only.",
+    "Xu, J., Plaxco, K. W., & Allen, S. J. (2006). Absorption spectra of liquid water and aqueous buffers between 0.3 and 3.72 THz. J. Chem. Phys. 124, 036101.",
+    "Kindt, J. T., & Schmuttenmaer, C. A. (1996). Far-infrared dielectric properties of polar liquids probed by femtosecond terahertz pulse spectroscopy. J. Phys. Chem. 100, 10373. https://doi.org/10.1021/jp960141g",
+    "Pickwell, E., et al. (2004). In vivo study of human skin using pulsed terahertz radiation. Phys. Med. Biol. 49, 1595. https://doi.org/10.1088/0031-9155/49/9/001",
+    "ICNIRP (2013). Guidelines on limits of exposure to laser radiation of wavelengths between 180 nm and 1,000 um. Health Phys. 105, 271-295.",
+    "Aggarwal, S. K., & MacKinnon, R. (1996). Contribution of the S4 segment to gating charge in the Shaker K+ channel. Neuron 16, 1169. https://doi.org/10.1016/s0896-6273(00)80143-9",
+    "Boyd, R. W. (2008). Nonlinear Optics (3rd ed.). Academic Press."
+  ],
+  "notes": "Evidence status: all results are SYNTHETIC. No physical, biological or safety claim is made. Mun Seok Lee (author of the cited preprints, CC BY 4.0) is credited as the source author of the equations only; he has not reviewed or endorsed this software. Commercial licensing: see COMMERCIAL-LICENSE.md."
+}

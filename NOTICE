@@ -1,0 +1,18 @@
+Digital to Wave 2 THz Validity
+Copyright (C) 2026 Jean-François Brisson / Spark AI NLP
+Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only); see LICENSE.
+
+This project studies equations printed in
+Lee, Mun Seok (2026), "Digital to Wave: LGD In Situ Wave Memory-Human Wave Integrated Interface-Metaverse
+Hologram- Wave Affective AI", Zenodo preprint (Part II), https://doi.org/10.5281/zenodo.21947108
+(concept DOI 10.5281/zenodo.21947107), and uses the signed-amplitude sine encoding printed on p. 12 of
+Lee, Mun Seok (2026), "Digital to Wave: Paradigm Shift in Quantum Wave-Based Computing and Lab-Grown Diamond
+Memory", Zenodo preprint (Part I), https://doi.org/10.5281/zenodo.21947036 (concept DOI 10.5281/zenodo.21464222).
+Both preprints are distributed by their author under CC BY 4.0. No text, figures or other material from them are
+redistributed here; equations are cited by page and paraphrased. Their author has not reviewed or endorsed this
+software.
+
+d2w_thz/_vendor/ contains code copied verbatim from the Digital to Wave Testbench v0.4.1
+(https://github.com/sparkainlp-x/digital-to-wave-testbench, commit f4b39343e7dac983a06238795bc2b7f42c5f94b5,
+doi:10.5281/zenodo.23134616), Copyright (C) 2026 Jean-François Brisson / Spark AI NLP, AGPL-3.0-only;
+see d2w_thz/_vendor/PROVENANCE.json.

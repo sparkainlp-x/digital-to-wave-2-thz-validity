@@ -1,0 +1,103 @@
+{
+ "source_repository": "https://github.com/sparkainlp-x/digital-to-wave-testbench",
+ "tag": "v0.4.1",
+ "commit": "f4b39343e7dac983a06238795bc2b7f42c5f94b5",
+ "zenodo_version_doi": "10.5281/zenodo.23134616",
+ "zenodo_concept_doi": "10.5281/zenodo.23122876",
+ "whole_files": [
+  {
+   "vendored_as": "d2w_thz/_vendor/digital_to_wave.py",
+   "source_file": "digital_to_wave.py",
+   "sha256": "866cab09ae3b64387de9fc9909288dac37f9f81e7e2f6603b2e786674d46ac18",
+   "note": "byte-identical copy"
+  }
+ ],
+ "source_file_sha256": {
+  "digital_to_wave.py": "866cab09ae3b64387de9fc9909288dac37f9f81e7e2f6603b2e786674d46ac18",
+  "robustness_benchmark_v2.py": "dc3a1166c873892c9b861248b53037217c361e8939b48b96d5de3fc7c00e5c0f",
+  "robustness_benchmark_v5_timing.py": "1bd9500ce3ceadadae25ce6731bc8ea9058adefa2781adf4d16d403b6c383419",
+  "robustness_benchmark_v6_timing_recovery.py": "c3f2da47e9da81072cbdc02153c28f6c9b6f5958251a4c91f8d64f9e5cfa112b"
+ },
+ "extracted_definitions": [
+  {
+   "name": "VECTOR_SEED",
+   "source_file": "robustness_benchmark_v2.py",
+   "lines": [
+    30,
+    30
+   ],
+   "sha256": "3e2bf3c9e7d55705013dee56834a8df16df971c8d9641cb8a1de347b036eb584",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "WILSON_Z_95",
+   "source_file": "robustness_benchmark_v2.py",
+   "lines": [
+    35,
+    35
+   ],
+   "sha256": "328311f23b534c4a6b78e46d206420b51e25c377b8cf658b2f57710fa2090d3f",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "build_input_patterns",
+   "source_file": "robustness_benchmark_v2.py",
+   "lines": [
+    45,
+    65
+   ],
+   "sha256": "8102df240282b091033ee5cd6fc3bfccdca0443e5f245336ddce47d17046e6b3",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "wilson_interval",
+   "source_file": "robustness_benchmark_v2.py",
+   "lines": [
+    68,
+    81
+   ],
+   "sha256": "2cc49032dceec2b80feef287bde3fd9352c6187fd195754b66704a290c5ad520",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "TOLERANCE",
+   "source_file": "robustness_benchmark_v5_timing.py",
+   "lines": [
+    37,
+    37
+   ],
+   "sha256": "0277a6d7b56786fb18974ea578bcf0a549a0da365ebf7a59cf01703fad876da8",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "_finite_nonnegative",
+   "source_file": "robustness_benchmark_v5_timing.py",
+   "lines": [
+    72,
+    79
+   ],
+   "sha256": "b509ccbbf0617842fd8ca27927cdc01b6ed67f75ee779d46f65fcf10eca4d29a",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "theoretical_frame_pass_probability",
+   "source_file": "robustness_benchmark_v5_timing.py",
+   "lines": [
+    145,
+    168
+   ],
+   "sha256": "0a101df3e97760a6f08e4410d7fa917c67e05adf1fac204ebc87ccd9bc0c77a0",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  },
+  {
+   "name": "mcnemar_exact_p",
+   "source_file": "robustness_benchmark_v6_timing_recovery.py",
+   "lines": [
+    171,
+    180
+   ],
+   "sha256": "1387dfc9ce44a8f6d6cdf44f6f81d25200c5dbed5e38987171dd7394e689a8cc",
+   "vendored_in": "d2w_thz/_vendor/testbench_v041.py"
+  }
+ ]
+}
