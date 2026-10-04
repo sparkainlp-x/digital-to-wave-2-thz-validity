@@ -1,0 +1,31 @@
+id,paper,section,pages,equation,classes,used_here,finding
+P1-12a,I,encoding,12,"S(t) = |N| A_min sin(w t + phi), phi = pi/4 (N > 0), 5 pi/4 (N < 0)","a,b",channel input (vendored encode_wave),"Well-defined. 5 pi/4 = pi + pi/4, so S = N A_min sin(w t + pi/4): signed amplitude on one fixed-phase carrier. N = 0 is not defined in the text; the testbench sends zero amplitude."
+P1-12b,I,encoding,12,T_ijk tensor write; GHz / LGD spin-wave framing,c,,No physical mapping or units.
+P2-LGD-density,II,LGD memory,"3, 5, 11",79.6 ZB in a 10 x 10 x 3 mm^3 LGD,b,validity,"3e-7 m^3 / (0.3567 nm)^3 = 6.6e21 diamond unit cells, i.e. about 96 bits per cell (about 12 per atom); no mechanism is given; implausible as stated."
+P2-LGD-osc,II,LGD memory,13,damped driven oscillator for lattice modes,b,,Standard form; no LGD parameters tied to data.
+P2-LGD-phonon,II,LGD memory,14,phonon energy sum of hbar w (n + 1/2),b,,Standard.
+P2-LGD-interf,II,LGD memory,15,interference intensity / energy density of superposed waves,a,,Generic superposition; not specific to LGD.
+P2-LGD-lattice,II,LGD memory,15-16,standing-wave lattice of nodes,a,,Generic.
+P2-LGD-phase,II,LGD memory,16,THz phase shift as integral of delta n over z,"a,b",,Standard optical path phase.
+P2-LGD-omega,II,LGD memory,17,CVD imprint total Omega_Total,c,,Composite symbols without definitions or units.
+P2-LGD-sted,II,LGD memory,18-19,STED-THz locking / readout,c,,Qualitative; no transfer function.
+P2-HWI-band,II,HWI,"25, 27",THz carrier gated at 5-60 Hz; neural band 0.5-100 Hz; membrane low-pass below 100 Hz,a,channel,Used as the envelope band and a first-order 100 Hz low-pass.
+P2-HWI-fresnel,II,HWI,34,T_sol = 4 n1 n2 / ((n1 + n2)^2 + kappa^2),"a,b","channel, validity",Consistent; standard (lossless incident medium).
+P2-HWI-beer,II,HWI,34,"I(z) = I0 exp(-alpha z), alpha = 2 w kappa / c, skin depth 1/alpha","a,b","channel, validity",Consistent; standard.
+P2-HWI-rect,II,HWI,35,P_LF = eps0 chi2 |E|^2,"a,b","channel, validity","Consistent; standard. Bulk liquid water is centrosymmetric, so chi2 = 0 in the dipole approximation."
+P2-HWI-intensity,II,HWI,35,I = 1/2 n1 c eps0 |E|^2,b,validity,"Consistent; inside the tissue n2, not n1, applies."
+P2-HWI-dV,II,HWI,36,dV = P_LF d / (eps0 eps_LF) = [2 chi2 T_sol exp(-alpha z) d / (n1 c eps0 eps_LF)] I,"a,b","channel, validity",Consistent; linear intensity-to-voltage coupling.
+P2-HWI-Imin,II,HWI,37,"I_peak,min >= dV_th / coupling (and an expanded form)",b,validity,Consistent; the expanded form drops the kappa^2 of T_sol (about 4% for water at 1 THz).
+P2-HWI-std,II,HWI,29,"'HWI Standard Equation' I_peak,min >= (1/D) [2 n2 c eps0 eps_LF / (chi2 d)] [((n1+n2)^2 + kappa^2) / (2 w kappa)] ln(I0/I_t) V_th",b,validity,"INCONSISTENT: the right side has units of intensity x time (J m^-2). ln(I0/I_t)/(2 w kappa) = z/c, so the exponential depth factor of p. 37 became linear; the Fresnel factor differs from p. 37; with 1/D the time-averaged intensity does not fall with duty cycle."
+P2-HWI-thermal,II,HWI,"29, 38",tau_th = rho C_p w^2 / (4 k),b,validity,Consistent; standard thermal-diffusion time.
+P2-HWI-snr,II,HWI,40,SNR = q_eff dV / (k_B T),b,validity,"Consistent. The paper's k_B T = 4.11e-21 J corresponds to about 298 K, not 310 K (4.28e-21 J)."
+P2-QWM-fourier,II,QWM / BCI,42-43,memory 'compression' by Fourier transform,c,,Generic FFT; no neural data model.
+P2-QWM-copy,II,QWM / BCI,43-45,memory copy and erase operators,c,,Undefined operators.
+P2-QWM-beat,II,QWM / BCI,45-47,smartphone-brain link via two-tone THz difference frequency (0.5-50 Hz beat),a,channel,"Only the beat is modelled, as a transmit mapping; nothing neural."
+P2-QWM-stdp,II,QWM / BCI,51,STDP 'hub' equation,c,,Symbols undefined.
+P2-QWM-hippo,II,QWM / BCI,54,hippocampal tensor,c,,No mapping.
+P2-QWM-jholo,II,QWM / BCI,55-57,J_Holo / E_True,c,,No units or measurement.
+P2-HOLO-rot,II,hologram / CMB,65,Rodrigues rotation,a,,Standard geometry; not specific.
+P2-HOLO-pll,II,hologram / CMB,73-74,phase-locked loop,a,,Standard PLL; no hologram-specific parameters.
+P2-HOLO-rest,II,hologram / CMB,64-77,"real-space hologram, CMB coupling",c,,
+P2-WAI,II,wave affective AI,86-94,emotion-wave equations,c,,"No defined observables, units or data."

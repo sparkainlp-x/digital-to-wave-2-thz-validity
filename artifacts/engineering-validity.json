@@ -1,0 +1,226 @@
+{
+ "assumptions": {
+  "T_sol": 0.8497323767217044,
+  "V_th_V": 0.015,
+  "alpha_per_m": 22000.0,
+  "chi2_m_per_V": 1.37e-10,
+  "d_m": 5e-09,
+  "eps_LF": 2.0,
+  "kappa": 0.5248479675160637,
+  "medium": "liquid water (skin is similar or higher)",
+  "n1": 1.0,
+  "n2": 2.1,
+  "thz_frequency_hz": 1000000000000.0
+ },
+ "coupling_V_per_W_m2_at_surface": 2.192821621984548e-16,
+ "dimension_checks": [
+  {
+   "consistent": true,
+   "equation": "Fresnel normal-incidence transmissivity T_sol = 4 n1 n2 / ((n1+n2)^2 + kappa^2)",
+   "lhs": "1",
+   "note": "standard; correct form for a lossless incident medium",
+   "page": 34,
+   "rhs": "1"
+  },
+  {
+   "consistent": true,
+   "equation": "Beer-Lambert I(z) = I0 exp(-alpha z), alpha = 2 omega kappa / c",
+   "lhs": "m^-1",
+   "note": "standard",
+   "page": 34,
+   "rhs": "m^-1"
+  },
+  {
+   "consistent": true,
+   "equation": "Skin depth delta = 1/alpha = c / (2 omega kappa)",
+   "lhs": "m",
+   "note": "standard (1/e intensity)",
+   "page": 34,
+   "rhs": "m"
+  },
+  {
+   "consistent": true,
+   "equation": "Rectification P_LF = eps0 chi2 |E|^2",
+   "lhs": "m^-2 s A",
+   "note": "standard",
+   "page": 35,
+   "rhs": "m^-2 s A"
+  },
+  {
+   "consistent": true,
+   "equation": "Intensity I = 1/2 n1 c eps0 |E|^2",
+   "lhs": "kg s^-3",
+   "note": "standard; inside the target medium n2, not n1, applies",
+   "page": 35,
+   "rhs": "kg s^-3"
+  },
+  {
+   "consistent": true,
+   "equation": "Induced potential Delta V = P_LF d / (eps0 eps_LF)",
+   "lhs": "m^2 kg s^-3 A^-1",
+   "note": "consistent",
+   "page": 36,
+   "rhs": "m^2 kg s^-3 A^-1"
+  },
+  {
+   "consistent": true,
+   "equation": "Delta V = [2 chi2 T_sol exp(-alpha z) d / (n1 c eps0 eps_LF)] I_peak",
+   "lhs": "m^2 kg s^-3 A^-1",
+   "note": "consistent",
+   "page": 36,
+   "rhs": "m^2 kg s^-3 A^-1"
+  },
+  {
+   "consistent": true,
+   "equation": "I_peak,min >= [n1 c eps0 eps_LF / (2 chi2 T_sol exp(-alpha z) d)] V_th",
+   "lhs": "kg s^-3",
+   "note": "consistent (inverse of p. 36)",
+   "page": 37,
+   "rhs": "kg s^-3"
+  },
+  {
+   "consistent": true,
+   "equation": "I_peak,min >= [n1 c eps0 eps_LF (n1+n2)^2 / (8 n1 n2 chi2 d)] exp(2 omega kappa z / c) V_th",
+   "lhs": "kg s^-3",
+   "note": "consistent; drops the kappa^2 of T_sol (kappa ~ 0.5 for water at 1 THz: ~4% effect)",
+   "page": 37,
+   "rhs": "kg s^-3"
+  },
+  {
+   "consistent": false,
+   "equation": "'HWI Standard Equation' I_peak,min >= (1/D) [2 n2 c eps0 eps_LF / (chi2 d)] [((n1+n2)^2 + kappa^2) / (2 omega kappa)] ln(I0/I_target) V_th",
+   "lhs": "kg s^-3",
+   "note": "INCONSISTENT: the right side has units of intensity x time (J m^-2). ln(I0/I_t)/(2 omega kappa) = z/c, so the exponential depth factor of p. 37 became a linear one; the Fresnel factor also differs from p. 37",
+   "page": 29,
+   "rhs": "kg s^-2"
+  },
+  {
+   "consistent": true,
+   "equation": "Thermal time tau_th = rho C_p w^2 / (4 k)",
+   "lhs": "s",
+   "note": "consistent; standard thermal-diffusion time scale",
+   "page": 29,
+   "rhs": "s"
+  },
+  {
+   "consistent": true,
+   "equation": "SNR = q_eff Delta V_LF / (k_B T)",
+   "lhs": "1",
+   "note": "consistent",
+   "page": 40,
+   "rhs": "1"
+  }
+ ],
+ "evidence_status": "SYNTHETIC order-of-magnitude engineering check of Part II's HWI equations with standard reference values. Not a safety assessment; no physical validity of the HWI is claimed or refuted beyond what the stated equations and references imply. Mun Seok Lee has not reviewed or endorsed this analysis.",
+ "heating_at_surface": {
+  "absorbed_power_density_W_per_m3": 1.2787710660404045e+18,
+  "max_burst_s_for_delta_T_0p5K_no_diffusion": 1.6294785324257264e-12,
+  "note": "T_burst < tau_th (p. 29, p. 38) limits diffusion, not the adiabatic rise within one burst. Because p. 29 scales I_peak by 1/D, the time-averaged intensity D*I_peak does not fall with D.",
+  "thz_period_s": 1e-12
+ },
+ "kBT": {
+  "k_B_times_298K_J": 4.11433402e-21,
+  "k_B_times_310K_J": 4.2800119e-21,
+  "note": "the paper's 4.11e-21 J corresponds to ~298 K, not 310 K (~4% difference)",
+  "paper_value_J": 4.11e-21
+ },
+ "lgd_density_claim": {
+  "bits_per_atom": 12.042069823116002,
+  "bits_per_unit_cell": 96.33655858492801,
+  "unit_cells": 6.610159313907942e+21
+ },
+ "p29_vs_p37": {
+  "note": "different units, so no numerical agreement is possible; p. 37 is the consistent form",
+  "p29_as_printed_at_ln_ratio_1_D_1_value_in_J_per_m2": 731.8180931366987,
+  "p37_at_one_penetration_depth_W_per_m2": 185944114277677.38
+ },
+ "penetration_depth_m": {
+  "0.30THz": 8.130081300813008e-05,
+  "0.60THz": 5.988023952095808e-05,
+  "0.99THz": 4.545454545454545e-05,
+  "1.98THz": 2.8818443804034583e-05
+ },
+ "references": {
+  "air_breakdown_field": "standard dielectric strength of dry air",
+  "chi2_upper_bound": "ZnTe d14 ~ 68.5 pm/V (chi2 = 2 d), one of the strongest THz optical-rectification crystals; a deliberately extreme upper bound. Bulk liquid water is centrosymmetric, so its bulk chi2 vanishes in the electric-dipole approximation (Boyd, Nonlinear Optics, 3rd ed., 2008, sec. 1.5)",
+  "icnirp_skin_limit_long": "ICNIRP 2013 laser guidelines (Health Phys. 105, 271), >1400 nm to 1 mm, >10 s: 10/A_s W m^-2 for 0.01-0.1 m^2 (1000 W m^-2 at 0.01 m^2), 100 W m^-2 above 0.1 m^2",
+  "membrane_eps_lf": "lipid hydrocarbon core ~2 (low value favours the paper)",
+  "membrane_thickness": "textbook lipid bilayer ~5 nm",
+  "q_gating": "Shaker K+ channel ~13 e0: Aggarwal & MacKinnon, Neuron 16, 1169 (1996), doi:10.1016/s0896-6273(00)80143-9; Schoppa et al., Science 255, 1712 (1992)",
+  "skin_note": "In vivo skin is water-dominated at THz and of the same order or higher (Pickwell et al., Phys. Med. Biol. 49, 1595 (2004), doi:10.1088/0031-9155/49/9/001)",
+  "v_th_depolarisation": "rest about -70 mV to threshold about -55 mV (Kandel et al., Principles of Neural Science, 6th ed., 2021; cited by Part II)",
+  "water_alpha_per_cm": "Xu, Plaxco & Allen, J. Chem. Phys. 124, 036101 (2006), Table I (https://www.itst.ucsb.edu/~sjallen/Pubs/PubJChemPhys.pdf)",
+  "water_cp": "standard tables (CRC Handbook)",
+  "water_k": "standard tables (CRC Handbook)",
+  "water_n_1thz": "approx.; Kindt & Schmuttenmaer, J. Phys. Chem. 100, 10373 (1996), doi:10.1021/jp960141g; Thrane et al., Chem. Phys. Lett. 240, 330 (1995)",
+  "water_rho": "standard tables (CRC Handbook)"
+ },
+ "required_intensity_by_depth": [
+  {
+   "depth_label": "surface_0um",
+   "depth_m": 0.0,
+   "log10_I_peak_min_W_per_m2": 13.835087954208351,
+   "log10_incident_E_field_V_per_m": 8.356074258529397,
+   "log10_ratio_E_to_air_breakdown": 1.878953003809734,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 10.835087954208351
+  },
+  {
+   "depth_label": "one_penetration_depth",
+   "depth_m": 4.545454545454545e-05,
+   "log10_I_peak_min_W_per_m2": 14.269382436111602,
+   "log10_incident_E_field_V_per_m": 8.573221499481022,
+   "log10_ratio_E_to_air_breakdown": 2.0961002447613595,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 11.269382436111602
+  },
+  {
+   "depth_label": "100um",
+   "depth_m": 0.0001,
+   "log10_I_peak_min_W_per_m2": 14.790535814395506,
+   "log10_incident_E_field_V_per_m": 8.833798188622975,
+   "log10_ratio_E_to_air_breakdown": 2.3566769339033122,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 11.790535814395506
+  },
+  {
+   "depth_label": "1mm",
+   "depth_m": 0.001,
+   "log10_I_peak_min_W_per_m2": 23.38956655607989,
+   "log10_incident_E_field_V_per_m": 13.133313559465167,
+   "log10_ratio_E_to_air_breakdown": 6.656192304745504,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 20.38956655607989
+  },
+  {
+   "depth_label": "2mm_typical_skin_thickness",
+   "depth_m": 0.002,
+   "log10_I_peak_min_W_per_m2": 32.94404515795143,
+   "log10_incident_E_field_V_per_m": 17.910552860400937,
+   "log10_ratio_E_to_air_breakdown": 11.433431605681275,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 29.94404515795143
+  },
+  {
+   "depth_label": "10mm",
+   "depth_m": 0.01,
+   "log10_I_peak_min_W_per_m2": 109.37987397292375,
+   "log10_incident_E_field_V_per_m": 56.128467267887096,
+   "log10_ratio_E_to_air_breakdown": 49.651346013167434,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 106.37987397292375
+  },
+  {
+   "depth_label": "50mm_order_of_deep_brain_structures",
+   "depth_m": 0.05,
+   "log10_I_peak_min_W_per_m2": 491.5590180477853,
+   "log10_incident_E_field_V_per_m": 247.21803930531786,
+   "log10_ratio_E_to_air_breakdown": 240.7409180505982,
+   "log10_ratio_to_ICNIRP_1000_W_per_m2": 488.5590180477853
+  }
+ ],
+ "snr_p40_at_V_th": {
+  "note": "dimensionless and plausible (~7) once Delta V = V_th is reached; it says nothing about whether Delta V can be reached",
+  "q_eff_C": 2.0828296241999997e-18,
+  "value": 7.299616237749244
+ },
+ "thermal_relaxation_time_s": {
+  "w_1000um": 1.7364416666666669,
+  "w_100um": 0.017364416666666667,
+  "w_10um": 0.0001736441666666667
+ }
+}
