@@ -7,7 +7,7 @@
     {
       "name": "Brisson, Jean-François",
       "orcid": "0009-0000-9778-5374",
-      "affiliation": "Spark AI NLP"
+      "affiliation": "Spark AI NLP, Fredericton, New Brunswick, Canada"
     }
   ],
   "license": "AGPL-3.0-only",
@@ -32,13 +32,13 @@
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.21947108",
-      "relation": "isDerivedFrom",
+      "relation": "references",
       "scheme": "doi",
       "resource_type": "publication-preprint"
     },
     {
       "identifier": "10.5281/zenodo.21947107",
-      "relation": "isDerivedFrom",
+      "relation": "references",
       "scheme": "doi",
       "resource_type": "publication-preprint"
     },
@@ -77,5 +77,11 @@
     "Aggarwal, S. K., & MacKinnon, R. (1996). Contribution of the S4 segment to gating charge in the Shaker K+ channel. Neuron 16, 1169. https://doi.org/10.1016/s0896-6273(00)80143-9",
     "Boyd, R. W. (2008). Nonlinear Optics (3rd ed.). Academic Press."
   ],
-  "notes": "Evidence status: all results are SYNTHETIC. No physical, biological or safety claim is made. Mun Seok Lee (author of the cited preprints, CC BY 4.0) is credited as the source author of the equations only; he has not reviewed or endorsed this software. Commercial licensing: see COMMERCIAL-LICENSE.md."
+  "notes": "Evidence status: all results are SYNTHETIC. No physical, biological or safety claim is made. Mun Seok Lee (author of the cited preprints, CC BY 4.0) is credited as the source author of the equations only; he has not reviewed or endorsed this software. Commercial licensing: see COMMERCIAL-LICENSE.md.",
+  "communities": [
+    {
+      "identifier": "spark-ai-nlp"
+    }
+  ],
+  "publication_date": "2026-10-14"
 }
