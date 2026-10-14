@@ -10,6 +10,14 @@ authors:
 version: 0.1.0
 date-released: "2026-10-14"
 license: AGPL-3.0-only
+doi: "10.5281/zenodo.23375690"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23375690"
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.23375691"
+    description: "Version DOI for v0.1.0"
 repository-code: "https://github.com/sparkainlp-x/digital-to-wave-2-thz-validity"
 url: "https://sparkainlpx.xyz"
 abstract: >-

@@ -157,6 +157,8 @@ expected, which has probability ≈ 10%.
 
 ## Citation
 
+Archived on Zenodo: concept DOI [10.5281/zenodo.23375690](https://doi.org/10.5281/zenodo.23375690) (all versions). Version DOI for v0.1.0: [10.5281/zenodo.23375691](https://doi.org/10.5281/zenodo.23375691).
+
 See [CITATION.cff](CITATION.cff). Please also cite the Part II preprint (source of the equations), the Part I preprint (source of the encoding) and the testbench.
 
 ## License
